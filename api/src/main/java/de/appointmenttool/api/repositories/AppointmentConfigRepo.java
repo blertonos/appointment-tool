@@ -8,5 +8,5 @@ import java.util.UUID;
 
 @RepositoryRestResource(collectionResourceRel = "appointment-configs", path = "appointment-configs")
 public interface AppointmentConfigRepo extends JpaRepository<AppointmentConfig, UUID> {
-  AppointmentConfig findByName(String name);
+  AppointmentConfig findByConfigName(String name);
 }
