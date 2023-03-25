@@ -1,4 +1,4 @@
-package de.appointmenttool.api.exceptions;
+package de.appointmenttool.api.appointment.exceptions;
 
 public class AppointmentNotFoundException extends Exception {
   public AppointmentNotFoundException(String message) {

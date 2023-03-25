@@ -1,12 +1,12 @@
-package de.appointmenttool.api.services;
+package de.appointmenttool.api.appointment.services;
 
-import de.appointmenttool.api.dtos.PersonDTO;
-import de.appointmenttool.api.exceptions.AppointmentConfigNotFoundException;
-import de.appointmenttool.api.exceptions.AppointmentNotFoundException;
-import de.appointmenttool.api.models.Appointment;
-import de.appointmenttool.api.models.Person;
-import de.appointmenttool.api.repositories.AppointmentRepo;
-import de.appointmenttool.api.repositories.PersonRepo;
+import de.appointmenttool.api.person.dtos.PersonDTO;
+import de.appointmenttool.api.appointment.entities.AppointmentConfigNotFoundException;
+import de.appointmenttool.api.appointment.exceptions.AppointmentNotFoundException;
+import de.appointmenttool.api.appointment.entities.Appointment;
+import de.appointmenttool.api.person.entities.Person;
+import de.appointmenttool.api.appointment.repositories.AppointmentRepo;
+import de.appointmenttool.api.person.repositories.PersonRepo;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package de.appointmenttool.api.dtos;
+package de.appointmenttool.api.person.dtos;
 
 import lombok.Data;
 

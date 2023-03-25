@@ -1,7 +1,7 @@
-package de.appointmenttool.api.services;
+package de.appointmenttool.api.appointment.services;
 
-import de.appointmenttool.api.exceptions.AppointmentConfigNotFoundException;
-import de.appointmenttool.api.repositories.AppointmentConfigRepo;
+import de.appointmenttool.api.appointment.entities.AppointmentConfigNotFoundException;
+import de.appointmenttool.api.appointment.repositories.AppointmentConfigRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,6 @@
-package de.appointmenttool.api.schedulers;
+package de.appointmenttool.api.appointment.schedulers;
 
-import de.appointmenttool.api.services.AppointmentService;
+import de.appointmenttool.api.appointment.services.AppointmentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;

@@ -1,4 +1,4 @@
-package de.appointmenttool.api.exceptions;
+package de.appointmenttool.api.appointment.entities;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

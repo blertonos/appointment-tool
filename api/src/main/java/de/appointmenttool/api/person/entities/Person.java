@@ -1,7 +1,8 @@
-package de.appointmenttool.api.models;
+package de.appointmenttool.api.person.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import de.appointmenttool.api.dtos.PersonDTO;
+import de.appointmenttool.api.appointment.entities.Appointment;
+import de.appointmenttool.api.person.dtos.PersonDTO;
 import lombok.*;
 import org.hibernate.Hibernate;
 

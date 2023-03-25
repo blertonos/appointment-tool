@@ -1,6 +1,6 @@
-package de.appointmenttool.api.repositories;
+package de.appointmenttool.api.person.repositories;
 
-import de.appointmenttool.api.models.Person;
+import de.appointmenttool.api.person.entities.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

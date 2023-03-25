@@ -1,6 +1,7 @@
-package de.appointmenttool.api.models;
+package de.appointmenttool.api.appointment.entities;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import de.appointmenttool.api.person.entities.Person;
 import lombok.*;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.hibernate.Hibernate;

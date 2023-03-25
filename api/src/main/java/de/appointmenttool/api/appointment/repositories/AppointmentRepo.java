@@ -1,7 +1,7 @@
-package de.appointmenttool.api.repositories;
+package de.appointmenttool.api.appointment.repositories;
 
-import de.appointmenttool.api.models.Appointment;
-import de.appointmenttool.api.models.Person;
+import de.appointmenttool.api.appointment.entities.Appointment;
+import de.appointmenttool.api.person.entities.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

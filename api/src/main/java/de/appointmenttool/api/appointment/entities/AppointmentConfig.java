@@ -1,4 +1,4 @@
-package de.appointmenttool.api.models;
+package de.appointmenttool.api.appointment.entities;
 
 import lombok.*;
 import org.hibernate.Hibernate;
