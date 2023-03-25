@@ -33,7 +33,6 @@ public class Appointment {
   @OneToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "person_id", referencedColumnName = "id")
   @JsonManagedReference
-  @NonNull
   private Person person;
 
   public Appointment(@NonNull LocalDateTime startDate, @NonNull LocalDateTime endDate) {

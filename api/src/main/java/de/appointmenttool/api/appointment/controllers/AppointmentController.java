@@ -1,6 +1,7 @@
 package de.appointmenttool.api.appointment.controllers;
 
 
+import de.appointmenttool.api.appointment.exceptions.AppointmentTakenException;
 import de.appointmenttool.api.person.dtos.PersonDTO;
 import de.appointmenttool.api.appointment.exceptions.AppointmentNotFoundException;
 import de.appointmenttool.api.appointment.entities.Appointment;
@@ -10,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
@@ -21,16 +22,17 @@ public class AppointmentController {
 
   private final AppointmentService appointmentService;
 
-  private static final String DATE_PATTERN = "dd.mm.yyyy";
+  private static final String DATE_PATTERN = "dd.MM.yyyy";
 
   @PostMapping
   public List<Appointment> createAppointments(@RequestParam String appointmentDate) {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATE_PATTERN);
-    return appointmentService.startAppointmentGeneration(LocalDateTime.parse(appointmentDate, formatter));
+    LocalDate givenDate = LocalDate.parse(appointmentDate, formatter);
+    return appointmentService.startAppointmentGeneration(givenDate.atStartOfDay());
   }
 
   @PutMapping("{appointmentId}/assign-person")
-  public ResponseEntity<String> bookAppointmentForPerson(@PathVariable String appointmentId, @RequestBody PersonDTO person) throws AppointmentNotFoundException {
+  public ResponseEntity<String> bookAppointmentForPerson(@PathVariable String appointmentId, @RequestBody PersonDTO person) throws AppointmentNotFoundException, AppointmentTakenException {
     appointmentService.bookAppointmentForPerson(appointmentId, person);
     //TODO: Create Response Object and return it here (Status, Message, Body)
     return ResponseEntity.ok("Success");

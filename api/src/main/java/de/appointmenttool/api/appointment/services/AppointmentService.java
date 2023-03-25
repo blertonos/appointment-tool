@@ -1,5 +1,6 @@
 package de.appointmenttool.api.appointment.services;
 
+import de.appointmenttool.api.appointment.exceptions.AppointmentTakenException;
 import de.appointmenttool.api.person.dtos.PersonDTO;
 import de.appointmenttool.api.appointment.entities.AppointmentConfigNotFoundException;
 import de.appointmenttool.api.appointment.exceptions.AppointmentNotFoundException;
@@ -68,9 +69,12 @@ public class AppointmentService {
     }
   }
 
-  public void bookAppointmentForPerson(String appointmentId, PersonDTO personDTO) throws AppointmentNotFoundException {
+  public void bookAppointmentForPerson(String appointmentId, PersonDTO personDTO) throws AppointmentNotFoundException, AppointmentTakenException {
     var person = personRepo.save(new Person(personDTO));
     var appointment = getAppointmentById(appointmentId);
+    if (appointment.getPerson() != null) {
+      throw new AppointmentTakenException("Appointment already taken!");
+    }
     appointment.setPerson(person);
     appointmentRepo.save(appointment);
   }
