@@ -3,9 +3,7 @@ package de.appointmenttool.api.models;
 import lombok.*;
 import org.hibernate.Hibernate;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -16,12 +14,14 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class AppointmentConfig {
   @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
   @Column(name = "id", nullable = false)
   private UUID id;
 
   @Column(unique = true)
   private String configName;
-  private String configValue;
+  private String configStringValue;
+  private int configIntegerValue;
   private Boolean active;
 
   @Override
